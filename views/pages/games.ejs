@@ -1,0 +1,20 @@
+<%- include('../partials/header'); %>
+<main class="main main-cartoons container">
+    <h2 class="main-h2"><%= name %></h2>
+    <section class="section section-games">
+        <div class="row">
+            <% data.forEach(item => { %>
+            <div class="col-md-4">
+                <a href="/games/<%= item.id %>">
+                <img class="img-fluid" src="/media/Playstation.png" alt="playstationimg">
+            </a>
+                <figcaption class="figcap figcap-games"><%= item.name %></figcaption>
+            </div>
+            
+            
+            <% }) %>
+        </div>
+    </section>
+</main>
+
+<%- include('../partials/footer'); %>

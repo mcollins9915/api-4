@@ -1,0 +1,26 @@
+<%- include('../partials/header'); %>
+
+<main class="main main-single container">
+    <h2 class="main-h2"><%= name %></h2>
+    <section class="section section-single d-flex justify-content-between">
+        <figure class="figure-single">
+            <img src="/playstation-api/public/media/P.jpg" alt="titeimg" class="img-fluid">
+            <figcaption class="figcaption">Genre: <%= data.genre %></figcaption>
+            <figcaption class="figcaption">Developer: <%= data.developers %></figcaption>
+            <figcaption class="figcaption">Publishers: <%= data.publishers %></figcaption>
+        </figure>
+        <aside class="aside">
+            <h3 class="single-h3">ReleaseDate(s)</h3>
+            <ul class="single-ul-list-group">
+                <% for (const key in data.releaseDates) { %>
+                    <li class="single-li-list-group-item"> <%=
+                        `${key}: ${data.releaseDates[key]}` %>
+                    </li>
+
+                <% } %>
+            </ul>
+        </aside>
+    </section>
+</main>
+
+<%- include('../partials/footer'); %>
